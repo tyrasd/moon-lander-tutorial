@@ -23,6 +23,8 @@ var spaceship =
     crashed: false
 }
 
+var gravity = 0.1;
+
 function drawSpaceship()
 {
     context.save();
@@ -51,6 +53,8 @@ function drawSpaceship()
 
 function updateSpaceship()
 {
+    spaceship.position.x += spaceship.velocity.x;
+    spaceship.position.y += spaceship.velocity.y;
     if(spaceship.rotatingRight)
     {
         spaceship.angle += Math.PI / 180;
@@ -62,9 +66,10 @@ function updateSpaceship()
 
     if(spaceship.engineOn)
     {
-        spaceship.position.x += Math.sin(spaceship.angle);
-        spaceship.position.y -= Math.cos(spaceship.angle);
+        spaceship.velocity.x += spaceship.thrust * Math.sin(-spaceship.angle);
+        spaceship.velocity.y += spaceship.thrust * Math.cos(spaceship.angle);
     }
+    spaceship.velocity.y -= gravity;
 }
 
 
