@@ -23,7 +23,7 @@ var spaceship =
     crashed: false
 }
 
-var gravity = 0.1;
+var gravity = -0.03;
 
 function drawSpaceship()
 {
