@@ -2,9 +2,34 @@
 <html>
   <head>
     <title>Moon Lander</title>
+    <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    #gameArea {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      background: YELLOW;
+      border: solid 1px BLUE;
+    }
+    #statsPanel {
+      position: absolute;
+      width: 100%;
+      height: 8%;
+      bottom: 0;
+      opacity: 0.8;
+      background: RED;
+    }
+    </style>
   </head>
-  <body>
-    <canvas id="game" width="800" height="500"></canvas>
+  <body onLoad="resizeGame(); draw();">
+    <div id="gameArea">
+      <canvas id="gameCanvas"></canvas>
+      <div id="statsPanel"></div>
+    </div>
+
     <script src="game.js"></script>
   </body>
 </html>
