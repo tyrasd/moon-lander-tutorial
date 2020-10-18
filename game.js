@@ -3,7 +3,7 @@ var context = canvas.getContext("2d");
 
 var spaceship =
 {
-    color: "black",
+    color: "white",
     width: 8,
     height: 22,
     position:
