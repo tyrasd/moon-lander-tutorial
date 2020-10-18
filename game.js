@@ -33,7 +33,7 @@ for (var i = 0; i < 500; i++) {
     radius: Math.sqrt(Math.random() * 2),
     alpha: 1.0,
     decreasing: true,
-    dRatio: Math.random() * 0.05;
+    dRatio: Math.random() * 0.05
   };
 }
 
