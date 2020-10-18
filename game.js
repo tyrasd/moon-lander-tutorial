@@ -1,42 +1,3 @@
-var canvas = document.getElementById("game");
-var context = canvas.getContext("2d");
-
-var spaceship =
-{
-    color: "white",
-    width: 8,
-    height: 22,
-    position:
-    {
-        x: 20,
-        y: 20
-    },
-    velocity:
-    {
-        x: 0,
-        y: 0
-    },
-    angle: Math.PI / 2,
-    engineOn: false,
-    rotatingLeft: false,
-    rotatingRight: false,
-    crashed: false
-}
-
-var gravity = -0.03;
-var stars = [];
-
-for (var i = 0; i < 500; i++) {
-  stars[i] = {
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    radius: Math.sqrt(Math.random() * 2),
-    alpha: 1.0,
-    decreasing: true,
-    dRatio: Math.random() * 0.05
-  };
-}
-
 function drawSpaceship()
 {
     context.save();
@@ -148,8 +109,6 @@ function keyLetGo(event)
     }
 }
 
-document.addEventListener('keyup', keyLetGo);
-
 function keyPressed(event)
 {
     console.log(spaceship);
@@ -170,6 +129,46 @@ function keyPressed(event)
     }
 }
 
+document.addEventListener('keyup', keyLetGo);
 document.addEventListener('keydown', keyPressed);
+
+var canvas = document.getElementById("game");
+var context = canvas.getContext("2d");
+
+var spaceship =
+{
+    color: "white",
+    width: 8,
+    height: 22,
+    position:
+    {
+        x: 20,
+        y: 20
+    },
+    velocity:
+    {
+        x: 0,
+        y: 0
+    },
+    angle: Math.PI / 2,
+    engineOn: false,
+    rotatingLeft: false,
+    rotatingRight: false,
+    crashed: false
+}
+
+var gravity = -0.03;
+var stars = [];
+
+for (var i = 0; i < 500; i++) {
+  stars[i] = {
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.sqrt(Math.random() * 2),
+    alpha: 1.0,
+    decreasing: true,
+    dRatio: Math.random() * 0.05
+  };
+}
 
 draw();
