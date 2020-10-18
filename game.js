@@ -97,13 +97,13 @@ function drawStars()
     context.fillStyle = "rgba(255, 255, 255, " + star.alpha + ")";
     if (star.decreasing == true)
     {
-      star.alpha -=dRatio;
+      star.alpha -= star.dRatio;
       if (star.alpha < 0.1)
       { star.decreasing = false; }
     }
     else
     {
-      star.alpha += dRatio;
+      star.alpha += star.dRatio;
       if (star.alpha > 0.95)
       { star.decreasing = true; }
     }
